@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_add_description"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundDefault"
+    tools:context="com.example.ivan.smartas.AddActivities.AddDescription">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/add_description_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackgroundDefault"
+        app:theme="@style/ThemeOverlay.AppCompat.Light">
+    </android.support.v7.widget.Toolbar>
+
+    <Button
+        android:id="@+id/add_description_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#39ba9b"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text="Далее"
+        android:textAllCaps="false"/>
+
+    <ScrollView
+        android:id="@+id/add_description_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/add_description_toolbar"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@+id/add_description_next">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/add_description_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Введите текст"
+                android:padding="10dp"
+                android:background="@drawable/border_background"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/darker_gray"/>
+
+            <HorizontalScrollView
+                android:id="@+id/add_description_horiz_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:id="@+id/add_description_photo_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/add_description_add_photo"
+        android:orderInCategory="100"
+        android:title=""
+        android:icon="@drawable/ic_add_description_add_photo"
+        app:showAsAction="always">
+
+        <menu>
+
+        <item
+            android:id="@+id/add_photo_gallery"
+            android:orderInCategory="100"
+            android:title="Выберать из галереи"
+            app:showAsAction="ifRoom"/>
+        <item
+            android:id="@+id/add_photo_camera"
+            android:orderInCategory="100"
+            android:title="Сделать фото"
+            app:showAsAction="ifRoom"/>
+
+        </menu>
+
+    </item>
+</menu>

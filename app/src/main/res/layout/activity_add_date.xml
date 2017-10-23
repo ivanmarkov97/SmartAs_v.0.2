@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_add_date"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundDefault"
+    tools:context="com.example.ivan.smartas.AddActivities.AddDate">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/add_date_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackgroundDefault"
+        app:theme="@style/ThemeOverlay.AppCompat.Light">
+
+    </android.support.v7.widget.Toolbar>
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:id="@+id/add_date_calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_date_toolbar"
+        app:theme="@style/ThemeOverlay.AppCompat.Light"
+        app:mcv_showOtherDates="all"
+        app:mcv_selectionColor="@color/colorAccent"
+        app:mcv_arrowColor="@android:color/black"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_date_next_btn"
+        android:background="#39ba9b"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text="Далее"
+        android:textAllCaps="false"/>
+
+</RelativeLayout>
