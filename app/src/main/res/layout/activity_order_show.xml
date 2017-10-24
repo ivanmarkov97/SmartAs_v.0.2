@@ -12,10 +12,12 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/scroll_order_show"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true">
 
         <RelativeLayout
+            android:id="@+id/scroll_order_show_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <android.support.v4.view.ViewPager
@@ -126,13 +128,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/take_order"
         android:layout_centerInParent="true"
-        android:background="#39ba9b"
+        android:background="@color/colorAccent"
         android:layout_alignParentBottom="true"
         android:paddingRight="40dp"
         android:paddingLeft="40dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
         tools:text="Взять заказ" />
 
 </RelativeLayout>

@@ -25,7 +25,7 @@ public class AddDate extends AppCompatActivity {
 
     Toolbar toolbar;
     MaterialCalendarView materialCalendarView;
-    Button next;
+    //Button next;
     TextView time;
     java.util.Calendar calendar = java.util.Calendar.getInstance();
     String[] months = {"Янв", "Фев" , "Март" , "Апр" , "Май" , "Июнь" , "Июль" , "Авг" , "Сент" , "Окт" , "Ноя" , "Дек" };
@@ -41,13 +41,13 @@ public class AddDate extends AppCompatActivity {
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         getSupportActionBar().setTitle("Выберите день сдачи");
 
-        next = (Button) findViewById(R.id.add_date_next_btn);
+        /*next = (Button) findViewById(R.id.add_date_next_btn);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), AddTime.class));
             }
-        });
+        });*/
 
         materialCalendarView = (MaterialCalendarView) findViewById(R.id.add_date_calendarView);
         materialCalendarView.state().edit()
@@ -60,7 +60,7 @@ public class AddDate extends AppCompatActivity {
         materialCalendarView.setOnDateChangedListener(new OnDateSelectedListener() {
             @Override
             public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
-                TimePickerDialog timePickerDialog = new TimePickerDialog(AddDate.this, android.R.style.Theme_DeviceDefault_Light_Dialog ,onTimeSetListener, calendar.get(java.util.Calendar.HOUR_OF_DAY), calendar.get(java.util.Calendar.MINUTE), true);
+                TimePickerDialog timePickerDialog = new TimePickerDialog(AddDate.this, R.style.TimePickerTheme /*android.R.style.Theme_DeviceDefault_Light_Dialog*/,onTimeSetListener, calendar.get(java.util.Calendar.HOUR_OF_DAY), calendar.get(java.util.Calendar.MINUTE), true);
                 LayoutInflater layoutInflater = getLayoutInflater();
                 View view = layoutInflater.inflate(R.layout.time_picker_title, null);
                 ((TextView) view.findViewById(R.id.time_picker_title_title)).

@@ -37,4 +37,5 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.prolificinteractive:material-calendarview:1.4.3'
     compile 'com.mindorks:paracamera:0.2.2'
+    compile 'com.squareup.picasso:picasso:2.5.2'
 }

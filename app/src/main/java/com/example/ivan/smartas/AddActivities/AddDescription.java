@@ -7,12 +7,15 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -45,11 +48,15 @@ public class AddDescription extends AppCompatActivity {
     EditText description;
     Button next;
     LinearLayout photoContainer;
+    RecyclerView recyclerView;
+    OrderImageAdapter orderImageAdapter;
+    ArrayList<OrderImage> orderImages = new ArrayList<>();
     ArrayList<Uri> arrayList = new ArrayList<>();
     ArrayList<String> arrayListString = new ArrayList<>();
     ArrayList<Bitmap> arrayListBitmap = new ArrayList<>();
     ArrayList<String> names = new ArrayList<>();
     Camera camera;
+    String name = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +71,12 @@ public class AddDescription extends AppCompatActivity {
 
         description = (EditText) findViewById(R.id.add_description_description);
         next = (Button) findViewById(R.id.add_description_next);
-        photoContainer = (LinearLayout) findViewById(R.id.add_description_photo_container);
+        //photoContainer = (LinearLayout) findViewById(R.id.add_description_photo_container);
+        recyclerView = (RecyclerView) findViewById(R.id.add_description_horiz_photos);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        orderImageAdapter = new OrderImageAdapter(getApplicationContext(), orderImages);
+        orderImageAdapter.setNames(names);
+        recyclerView.setAdapter(orderImageAdapter);
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,8 +90,8 @@ public class AddDescription extends AppCompatActivity {
                 extras.putString("task_cost", "task_cost");
                 extras.putString("task_date", "task_date");
                 extras.putString("task_limit", "task_limit");
-                for(int i = 0; i < photoContainer.getChildCount(); i++) {
-                    extras.putString("file_name" + i, names.get(i));
+                for(int i = 0; i < orderImageAdapter.getNames().size(); i++) {
+                    extras.putString("file_name" + i, orderImageAdapter.getNames().get(i)/*names.get(i)*/);
                 }
                 intent.putExtras(extras);
                 startActivity(intent);
@@ -95,11 +107,6 @@ public class AddDescription extends AppCompatActivity {
         return true;
     }
 
-    public String getFilename(){
-        String name = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        return name + ".jpg";
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
@@ -111,7 +118,7 @@ public class AddDescription extends AppCompatActivity {
                 startActivityForResult(intentGal, 0);
                 break;
             case R.id.add_photo_camera:
-                String name = "ali_" + System.currentTimeMillis();
+                name = "ali_" + System.currentTimeMillis();
                 camera = new Camera.Builder()
                         .resetToCorrectOrientation(true)// it will rotate the camera bitmap to the correct orientation from meta data
                         .setTakePhotoRequestCode(1)
@@ -141,19 +148,23 @@ public class AddDescription extends AppCompatActivity {
         if(requestCode == 0){
             try {
                 Uri uri = data.getData();
-                getLayoutInflater().inflate(R.layout.photo_item, photoContainer);
+                //getLayoutInflater().inflate(R.layout.photo_item, photoContainer);
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
-                ((ImageView) photoContainer.getChildAt(photoContainer.getChildCount() - 1).findViewById(R.id.photo_item)).setImageBitmap(bitmap);
+                //((ImageView) photoContainer.getChildAt(photoContainer.getChildCount() - 1).findViewById(R.id.photo_item)).setImageBitmap(bitmap);
                 names.add(uri.toString());
+                orderImages.add(new OrderImage(uri.toString()));
+                orderImageAdapter.notifyItemInserted(orderImages.size() - 1);
                 Toast.makeText(getApplicationContext(), uri.toString(), Toast.LENGTH_LONG).show();
             }catch (IOException e){;}
         }
 
         if(requestCode == Camera.REQUEST_TAKE_PHOTO){
+            orderImages.add(new OrderImage("file:///data/data/com.example.ivan.smartas/files/pics/" + name + ".jpeg"));
+            orderImageAdapter.notifyItemInserted(orderImages.size() - 1);
             Bitmap bitmap = camera.getCameraBitmap();
             if(bitmap != null) {
-                getLayoutInflater().inflate(R.layout.photo_item, photoContainer);
-                ((ImageView) photoContainer.getChildAt(photoContainer.getChildCount() - 1).findViewById(R.id.photo_item)).setImageBitmap(bitmap);
+                //getLayoutInflater().inflate(R.layout.photo_item, photoContainer);
+                //((ImageView) photoContainer.getChildAt(photoContainer.getChildCount() - 1).findViewById(R.id.photo_item)).setImageBitmap(bitmap);
             }else{
                 Toast.makeText(this.getApplicationContext(),"Picture not taken!",Toast.LENGTH_SHORT).show();
             }
