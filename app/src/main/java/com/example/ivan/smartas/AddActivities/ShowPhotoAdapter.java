@@ -13,6 +13,8 @@ import android.widget.ImageView;
 
 import com.example.ivan.smartas.R;
 
+import uk.co.senab.photoview.PhotoViewAttacher;
+
 /**
  * Created by Ivan on 24.10.2017.
  */
@@ -51,6 +53,8 @@ public class ShowPhotoAdapter extends PagerAdapter {
         imageView.setMinimumHeight(height);
         imageView.setMinimumWidth(width);
         imageView.setImageURI(Uri.parse(images[position]));
+        PhotoViewAttacher photoViewAttacher = new PhotoViewAttacher(imageView);
+        photoViewAttacher.update();
         container.addView(itemView);
         return itemView;
     }

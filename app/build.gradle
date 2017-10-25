@@ -38,4 +38,5 @@ dependencies {
     compile 'com.prolificinteractive:material-calendarview:1.4.3'
     compile 'com.mindorks:paracamera:0.2.2'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.github.chrisbanes:PhotoView:1.2.6'
 }

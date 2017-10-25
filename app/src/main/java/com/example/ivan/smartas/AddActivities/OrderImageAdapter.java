@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.ivan.smartas.R;
 
@@ -52,8 +53,10 @@ public class OrderImageAdapter extends RecyclerView.Adapter<OrderImageAdapter.Im
             public void onClick(View v) {
                 if(v.getId() == R.id.photo_item_btn_del){
                     arrayListImage.remove(position);
-                    notifyItemRemoved(position);
+                    //notifyItemRemoved(position);
+                    notifyDataSetChanged();
                     names.remove(position);
+                    Toast.makeText(v.getContext(), "size == " + arrayListImage.size() + "/" + names.size(), Toast.LENGTH_LONG).show();
                 }
             }
         });
