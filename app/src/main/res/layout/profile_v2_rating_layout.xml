@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundDefault">
+
+    <TextView
+        android:id="@+id/rating_layout_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Рейтинг и отзывы"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/rating_layout_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Всего: 10"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:layout_below="@+id/rating_layout_header"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <RatingBar
+        android:id="@+id/rating_layout_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rating_layout_total"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:rating="5"
+        android:stepSize="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:numStars="5" />
+
+    <RatingBar
+        android:id="@+id/rating_layout_rating_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rating_layout_rating"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:rating="5"
+        android:stepSize="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:numStars="5" />
+
+    <RatingBar
+        android:id="@+id/rating_layout_rating_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rating_layout_rating_5"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:rating="4"
+        android:stepSize="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:numStars="5" />
+
+    <RatingBar
+        android:id="@+id/rating_layout_rating_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rating_layout_rating_4"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:rating="3"
+        android:stepSize="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:numStars="5" />
+
+    <RatingBar
+        android:id="@+id/rating_layout_rating_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rating_layout_rating_3"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:rating="2"
+        android:stepSize="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:numStars="5" />
+
+    <RatingBar
+        android:id="@+id/rating_layout_rating_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rating_layout_rating_2"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:rating="1"
+        android:stepSize="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:numStars="5" />
+
+    <TextView
+        android:id="@+id/rating_layout_num_marks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/rating_layout_rating"
+        android:layout_toEndOf="@+id/rating_layout_rating"
+        android:layout_marginLeft="20dp"
+        android:text="Всего оценок 5871"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"/>
+
+    <LinearLayout
+        android:id="@+id/rating_layout_progress_5"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/rating_layout_rating"
+        android:layout_alignStart="@+id/rating_layout_num_marks"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="7dp"
+        android:background="@android:color/darker_gray">
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="5dp"
+            android:orientation="horizontal"
+            android:background="@color/colorAccent">
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rating_layout_progress_4"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/rating_layout_rating_5"
+        android:layout_alignStart="@+id/rating_layout_num_marks"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="7dp"
+        android:background="@android:color/darker_gray">
+
+        <LinearLayout
+            android:layout_width="120dp"
+            android:layout_height="5dp"
+            android:orientation="horizontal"
+            android:background="@color/colorAccent">
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rating_layout_progress_3"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/rating_layout_rating_4"
+        android:layout_alignStart="@+id/rating_layout_num_marks"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="7dp"
+        android:background="@android:color/darker_gray">
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="5dp"
+            android:orientation="horizontal"
+            android:background="@color/colorAccent">
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rating_layout_progress_2"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/rating_layout_rating_3"
+        android:layout_alignStart="@+id/rating_layout_num_marks"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="7dp"
+        android:background="@android:color/darker_gray">
+
+        <LinearLayout
+            android:layout_width="70dp"
+            android:layout_height="5dp"
+            android:orientation="horizontal"
+            android:background="@color/colorAccent">
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rating_layout_progress_1"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/rating_layout_rating_2"
+        android:layout_alignStart="@+id/rating_layout_num_marks"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="7dp"
+        android:background="@android:color/darker_gray">
+
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="5dp"
+            android:orientation="horizontal"
+            android:background="@color/colorAccent">
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

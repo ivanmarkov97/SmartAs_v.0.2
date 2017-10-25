@@ -21,18 +21,19 @@
         android:textColorLink="@android:color/holo_blue_dark"
         android:fontFamily="sans-serif"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"/>
+        android:layout_marginBottom="5dp"
+        android:layout_toStartOf="@+id/order_cost" />
 
     <TextView
         android:text="TextView"
         android:paddingLeft="7dp"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/order_type"
         android:textSize="11sp"
         android:textColor="#585766"
         android:layout_below="@+id/subject_name"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_width="175dp" />
 
     <TextView
         android:layout_marginTop="5dp"
