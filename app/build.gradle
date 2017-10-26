@@ -39,5 +39,5 @@ dependencies {
     compile 'com.mindorks:paracamera:0.2.2'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.github.chrisbanes:PhotoView:1.2.6'
-    compile 'com.github.whinc:ratingbar:1.1.1'
+    compile 'com.borjabravo:simpleratingbar:1.0.0'
 }

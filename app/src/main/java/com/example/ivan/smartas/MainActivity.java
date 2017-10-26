@@ -27,6 +27,7 @@ import com.example.ivan.smartas.ChatFragment.ChatFragment;
 import com.example.ivan.smartas.ClockFragment.ClockFragment;
 import com.example.ivan.smartas.HomeFragment.HomeFragment;
 import com.example.ivan.smartas.ProfileFragment.ProfileFragment;
+import com.example.ivan.smartas.ProfileFragment.Profile_v2_Fragment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -107,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
                         //listViewAllOrders.setEnabled(false);
                         break;
                     case 4:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, new ProfileFragment()).disallowAddToBackStack().commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, new Profile_v2_Fragment()).disallowAddToBackStack().commit();
                         //listViewAllOrders.setEnabled(false);
                         break;
 
