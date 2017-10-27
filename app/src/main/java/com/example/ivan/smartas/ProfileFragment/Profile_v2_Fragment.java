@@ -5,12 +5,16 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.example.ivan.smartas.ProfileFragment.profile_fragments.Profile_v2_FragmentDoing;
+import com.example.ivan.smartas.ProfileFragment.profile_fragments.Profile_v2_FragmentHistory;
 import com.example.ivan.smartas.ProfileFragment.profile_fragments.Profile_v2_FragmentRating;
+import com.example.ivan.smartas.ProfileFragment.profile_fragments.Profile_v2_FragmentTook;
 import com.example.ivan.smartas.R;
 
 import static android.R.color.white;
@@ -41,12 +45,18 @@ public class Profile_v2_Fragment extends Fragment {
                 switch (tab.getPosition()){
                     case 0:
                         tab.setIcon(iconsBlack[tab.getPosition()]);
+                        Profile_v2_FragmentDoing fragmentDoing = new Profile_v2_FragmentDoing();
+                        getFragmentManager().beginTransaction().replace(R.id.profile_v2_info, fragmentDoing).disallowAddToBackStack().commit();
                         break;
                     case 1:
                         tab.setIcon(iconsBlack[tab.getPosition()]);
+                        Profile_v2_FragmentTook fragmentTook = new Profile_v2_FragmentTook();
+                        getFragmentManager().beginTransaction().replace(R.id.profile_v2_info, fragmentTook).disallowAddToBackStack().commit();
                         break;
                     case 2:
                         tab.setIcon(iconsBlack[tab.getPosition()]);
+                        Profile_v2_FragmentHistory fragmentHistory = new Profile_v2_FragmentHistory();
+                        getFragmentManager().beginTransaction().replace(R.id.profile_v2_info, fragmentHistory).disallowAddToBackStack().commit();
                         break;
                     case 3:
                         tab.setIcon(iconsBlack[tab.getPosition()]);
@@ -68,6 +78,8 @@ public class Profile_v2_Fragment extends Fragment {
 
             }
         });
+        TabLayout.Tab tab = tabLayout.getTabAt(3);
+        tab.select();
         return view;
     }
 }

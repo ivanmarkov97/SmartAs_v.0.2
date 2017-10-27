@@ -11,19 +11,26 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.example.ivan.smartas.CategoryActivity;
 import com.example.ivan.smartas.DateDigitsFromString;
 import com.example.ivan.smartas.Filter;
+import com.example.ivan.smartas.FilterActivity;
+import com.example.ivan.smartas.MainActivity;
 import com.example.ivan.smartas.OrderShowActivity;
 import com.example.ivan.smartas.R;
 
@@ -60,12 +67,27 @@ public class HomeFragment extends Fragment{
     private GetReciever getReciever;
     private OrderAdapter orderAdapter;
     private ArrayList<Order> orders = new ArrayList<>();
+    private Toolbar toolbar;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.home, container, false);
         context = container.getContext();
+
+        toolbar = (Toolbar) v.findViewById(R.id.toolbar);
+
+        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+        //((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayShowHomeEnabled(true);
+        //((AppCompatActivity)getActivity()).getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_cat2);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Все категории");
 
         listViewAllOrders = (RecyclerView) v.findViewById(R.id.all_orders);
         listViewAllOrders.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -77,6 +99,21 @@ public class HomeFragment extends Fragment{
         getReciever.execute("https://fast-basin-97049.herokuapp.com/order/new?user_id=" + UserDataClass.getUserIdStr());
 
         return v;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.main_menu, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.action_filter){
+            startActivity(new Intent(getActivity(), FilterActivity.class));
+            //overridePendingTransition(R.anim.left_in,R.anim.right_out);
+        }
+        return true;
     }
 
     public class GetReciever extends AsyncTask<String, Void, String> {

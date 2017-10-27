@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
 
     ListView listViewAllOrders;
     Typeface typeface;
-    Toolbar toolbar;
+    //Toolbar toolbar;
     TabLayout tabLayout;
     BottomNavigationView bottomNavigationView;
 
@@ -55,20 +55,20 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
         setContentView(R.layout.activity_main);
         listViewAllOrders = (ListView) findViewById(R.id.all_orders);
         //bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation_bottom);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        /*toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_cat2);
-        getSupportActionBar().setTitle("Все категории");
+        getSupportActionBar().setTitle("Все категории");*/
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container, new HomeFragment()).disallowAddToBackStack().commit();
 
         Drawable[] icons = {
             getResources().getDrawable(R.drawable.ic_item_bottom_home),
                 getResources().getDrawable(R.drawable.ic_item_bottom_clock),
-                getResources().getDrawable(R.drawable.ic_item_bottom_add),
+                getResources().getDrawable(R.drawable.ic_item_bottom_add_1),
                 getResources().getDrawable(R.drawable.ic_item_bottom_chat),
                 getResources().getDrawable(R.drawable.ic_item_bottom_profile),
         };
@@ -92,27 +92,32 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
             public void onTabSelected(TabLayout.Tab tab) {
                 switch (tab.getPosition()) {
                     case 1:
+                        tab.setIcon(R.drawable.ic_item_bottom_clock_2);
                         ClockFragment clockFragment = new ClockFragment();
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, clockFragment).disallowAddToBackStack().commit();
                         //listViewAllOrders.setEnabled(false);
                         break;
                     case 2:
+                        tab.setIcon(R.drawable.ic_item_bottom_3);
                         //AddFragment addFragment = new AddFragment();
                         //getSupportFragmentManager().beginTransaction().replace(R.id.container, addFragment).disallowAddToBackStack().commit();
                         //listViewAllOrders.setEnabled(false);
                         startActivity(new Intent(getApplication(), AddCategory.class));
                         break;
                     case 3:
+                        tab.setIcon(R.drawable.ic_item_bottom_chat_2);
                         ChatFragment chatFragment = new ChatFragment();
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, chatFragment).disallowAddToBackStack().commit();
                         //listViewAllOrders.setEnabled(false);
                         break;
                     case 4:
+                        tab.setIcon(R.drawable.ic_item_bottom_profile_2);
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, new Profile_v2_Fragment()).disallowAddToBackStack().commit();
                         //listViewAllOrders.setEnabled(false);
                         break;
 
                     case 0:
+                        tab.setIcon(R.drawable.ic_item_bottom_home);
                         HomeFragment homeFragment = new HomeFragment();
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).disallowAddToBackStack().commit();
                         //listViewAllOrders.setEnabled(false);
@@ -122,7 +127,25 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-                
+                switch (tab.getPosition()){
+                    case 0:
+                        tab.setIcon(R.drawable.ic_item_bottom_home_2);
+                        break;
+                    case 1:
+                        tab.setIcon(R.drawable.ic_item_bottom_clock);
+                        break;
+                    case 2:
+                        tab.setIcon(R.drawable.ic_item_bottom_add_1);
+                        break;
+                    case 3:
+                        tab.setIcon(R.drawable.ic_item_bottom_chat);
+                        break;
+                    case 4:
+                        tab.setIcon(R.drawable.ic_item_bottom_profile);
+                        break;
+                    default:
+                        break;
+                }
             }
 
             @Override
@@ -159,7 +182,7 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
         });
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
@@ -176,7 +199,7 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
             overridePendingTransition(R.anim.left_in,R.anim.right_out);
         }
         return true;
-    }
+    }*/
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
