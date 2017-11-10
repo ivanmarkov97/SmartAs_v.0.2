@@ -58,8 +58,8 @@ public class Profile_v2_FragmentTook extends Fragment {
             View v = LayoutInflater.from(getContext()).inflate(R.layout.order_item, linearLayout, false);
             orders.add(new Order(
                     i,
-                    "subject",
-                    "type",
+                    "Модели и методы анализа проектных решений",
+                    "Контрольная работа",
                     "1" + i + "-2-2017",
                     "",
                     100*(i + 1),

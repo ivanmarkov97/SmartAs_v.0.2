@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 42</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-1169.000000, -817.000000)">
+            <g id="Group-41" transform="translate(1168.000000, 817.000000)">
+                <g id="Group-42" transform="translate(1.000000, 0.000000)">
+                    <rect id="Rectangle-33" fill="#FFFFFF" x="0" y="0" width="24" height="24" rx="3"></rect>
+                    <path d="M7.48741023,22 C7.48741023,22 5.01793482,19.4236291 5.01793482,18.0836503 C5.01793482,17.5950393 9.43966857,16.1471352 10.0167423,14.1115277 C10.2419162,13.3172346 5.66724346,11.791561 5.01793482,10.0793464 C4.68607,9.20422512 9.05781062,7.58914554 10.0167423,6.01269346 C10.975674,4.43624138 7.48741023,3.00897391 7.48741023,2" id="Line" stroke="#64406F" stroke-width="2" stroke-linecap="square"></path>
+                    <path d="M16,1.5 L16,22.5" id="Line" stroke="#64406F" stroke-width="2" stroke-linecap="square"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

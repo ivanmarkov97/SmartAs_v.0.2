@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_redact"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundDefault"
+    tools:context="com.example.ivan.smartas.AddActivities.RedactActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/activity_redact_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:theme="@style/ThemeOverlay.AppCompat.Light">
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/activity_redact_scroll"
+        android:layout_marginTop="55dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/activity_redact_subject_type_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@android:color/darker_gray"
+                    android:text="Тип работы"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/activity_redact_subject_icon"
+                    android:layout_below="@id/activity_redact_subject_type_header"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/seva" />
+
+                <TextView
+                    android:text="Предмет"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/activity_redact_subject_icon"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/activity_redact_subject2_header"
+                    android:textColor="@android:color/darker_gray"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/activity_redact_subject_icon2"
+                    android:layout_below="@id/activity_redact_subject2_header"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/seva" />
+
+                <TextView
+                    android:id="@+id/activity_redact_deadline_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/darker_gray"
+                    android:text="Срок"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@+id/activity_redact_subject_icon2"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/activity_redact_deadline_icon"
+                    android:layout_below="@id/activity_redact_deadline_header"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/seva" />
+
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/activity_redact_deadline"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_alignTop="@+id/activity_redact_deadline_icon"
+                    android:layout_toEndOf="@+id/activity_redact_deadline_icon" />
+
+                <TextView
+                    android:text="TextView"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/activity_redact_subject"
+                    android:layout_alignTop="@+id/activity_redact_subject_icon2"
+                    android:layout_toEndOf="@+id/activity_redact_subject_icon2" />
+
+                <TextView
+                    android:text="TextView"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/activity_redact_subject_type"
+                    android:layout_alignTop="@+id/activity_redact_subject_icon"
+                    android:layout_toEndOf="@+id/activity_redact_subject2_header" />
+
+                <TextView
+                    android:id="@+id/activity_redact_cost_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/darker_gray"
+                    android:text="Стоимость"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@+id/activity_redact_deadline_icon"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/activity_redact_cost_icon"
+                    android:layout_below="@id/activity_redact_cost_header"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/seva" />
+
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_alignTop="@+id/activity_redact_cost_icon"
+                    android:layout_toEndOf="@+id/activity_redact_cost_icon"
+                    android:id="@+id/activity_redact_cost"
+                    android:textColor="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/activity_redact_description_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Описание"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_below="@id/activity_redact_cost_icon"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/activity_redact_description_icon"
+                    android:layout_below="@id/activity_redact_description_header"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/seva" />
+
+                <TextView
+                    android:text="Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в середине абзаца. Также все другие известные генераторы Lorem Ipsum используют один и тот же текст, который они просто повторяют, пока не достигнут нужный объём. Это делает предлагаемый здесь генератор единственным настоящим Lorem Ipsum генератором. Он использует словарь из более чем 200 латинских слов, а также набор моделей предложений. В результате сгенерированный Lorem Ipsum выглядит правдоподобно, не имеет повторяющихся абзацей или слов."
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_alignTop="@+id/activity_redact_description_icon"
+                    android:layout_toEndOf="@+id/activity_redact_description_icon"
+                    android:id="@+id/activity_redact_description" />
+
+                <TextView
+                    android:id="@+id/activity_redact_photo_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/darker_gray"
+                    android:text="Фотографии"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@+id/activity_redact_description"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/activity_redact_photos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/activity_redact_photo_header"
+                    android:layout_marginBottom="50dp">
+
+                </android.support.v7.widget.RecyclerView>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/activity_redact_publish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="опубликовать"
+        android:layout_gravity="bottom|center_horizontal"/>
+
+</FrameLayout>

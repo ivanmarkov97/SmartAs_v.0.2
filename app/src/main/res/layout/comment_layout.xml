@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBackgroundDefault"
+    android:paddingBottom="20dp">
+
+    <TextView
+        android:id="@+id/comment_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fuck me after dance..."
+        android:textSize="16sp"
+        android:layout_marginStart="10dp"
+        android:textColor="@android:color/black"/>
+
+    <RatingBar
+        android:id="@+id/comment_rating_layout_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:isIndicator="true"
+        android:rating="3.3"
+        android:layout_below="@id/comment_header"
+        android:theme="@style/RatingBar"
+        style="?attr/ratingBarStyleSmall"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="5dp"
+        android:numStars="5" />
+
+    <TextView
+        android:id="@+id/comment_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="your girlfriend"
+        android:textColor="@android:color/black"
+        android:layout_alignBottom="@+id/comment_rating_layout_rating"
+        android:layout_toEndOf="@+id/comment_rating_layout_rating"
+        android:layout_marginStart="12dp" />
+
+    <TextView
+        android:text="today"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="@android:color/black"
+        android:layout_marginEnd="10dp"
+        android:id="@+id/comment_date" />
+
+    <TextView
+        android:id="@+id/comment_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/comment_rating_layout_rating"
+        android:layout_alignStart="@+id/comment_rating_layout_rating"
+        android:layout_marginEnd="10dp"
+        android:text="Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам  сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно (например, юмористические варианты)."
+        />
+
+</RelativeLayout>

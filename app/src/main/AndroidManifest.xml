@@ -10,31 +10,62 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_icons"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".AuthActivity" android:screenOrientation="portrait">
+        <activity
+            android:name=".AuthActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".OrderShowActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".FilterActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".CategoryActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".ChatFragment.ChatActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".AddActivities.AddCategory" android:screenOrientation="portrait"/>
-        <activity android:name=".AddActivities.AddScience" android:screenOrientation="portrait"/>
-        <activity android:name=".AddActivities.AddSubject" android:screenOrientation="portrait"/>
-        <activity android:name=".AddActivities.AddCost" android:screenOrientation="portrait"/>
-        <activity android:name=".AddActivities.AddDate" android:screenOrientation="portrait"/>
-        <activity android:name=".AddActivities.AddTime" android:screenOrientation="portrait"/>
-        <activity android:name=".AddActivities.AddDescription" android:screenOrientation="portrait"/>
-        <activity android:name=".AddActivities.OrderPreShow" android:screenOrientation="portrait"/>
-        <activity android:name=".AddActivities.ShowPhotosActivity" android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OrderShowActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FilterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CategoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ChatFragment.ChatActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddActivities.AddCategory"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddActivities.AddScience"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddActivities.AddSubject"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddActivities.AddCost"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddActivities.AddDate"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddActivities.AddTime"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddActivities.AddDescription"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddActivities.OrderPreShow"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddActivities.ShowPhotosActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".AddActivities.RedactActivity"></activity>
     </application>
 
 </manifest>
